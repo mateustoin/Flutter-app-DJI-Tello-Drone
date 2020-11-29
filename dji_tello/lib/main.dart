@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tello/tello.dart';
 import 'package:control_pad/control_pad.dart';
+import 'dart:math';
 
 void main() => runApp(MyApp());
 
@@ -31,19 +32,32 @@ class MyHomePage extends StatelessWidget {
 
   // Cria objeto de tello para conectar com o Drone
   final tello = new ConnectTello();
+  final List rc_control = [0, 0, 0, 0];
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
+      child: Row(
         children: <Widget>[
-          ButtonNormal('takeoff', ' TakeOff ', tello),
-          const SizedBox(height: 30),
-          //ButtonPressed(),
-          ButtonNormal('land', '  Land   ', tello),
-          const SizedBox(height: 30),
-          ButtonNormal('command', 'KeepAlive', tello),
+          JoystickLeft(rc_control, tello),
+          const SizedBox(height: 100, width: 100),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              ButtonNormal('takeoff', ' TakeOff ', tello),
+              const SizedBox(height: 30),
+              //ButtonPressed(),
+              ButtonNormal('land', '  Land   ', tello),
+              const SizedBox(height: 30),
+              ButtonNormal('command', 'KeepAlive', tello),
+              const SizedBox(height: 30),
+              ButtonNormal('speed 10', 'Low Speed', tello),
+              const SizedBox(height: 30),
+              ButtonNormal('speed 50', 'High Speed', tello),
+            ],
+          ),
+          const SizedBox(height: 100, width: 100),
+          JoystickRight(rc_control, tello)
         ],
       ),
     );
@@ -124,6 +138,72 @@ class _ButtonPressedState extends State<ButtonPressed> {
         },
         icon: Icon(Icons.add, size: 20),
         label: Text("Button Pressed"),
+      ),
+    );
+  }
+}
+
+class JoystickLeft extends StatelessWidget {
+  final List rc_control;
+  final ConnectTello droneConnection;
+
+  JoystickLeft(this.rc_control, this.droneConnection);
+
+  static const double pi = 3.1415926535897932;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: JoystickView(
+        onDirectionChanged: (degrees, distance) {
+          //print('Grau JoystickLeft: $degrees');
+          //print('Distancia JoystickLeft: $distance');
+          double radian = degrees*(pi/180);
+          //print('Radianos: $radian');
+          var x_left_right = ((sin(radian)*distance)*100).toInt();
+          var y_forward_backward = ((cos(radian)*distance)*100).toInt();
+          rc_control[0] = x_left_right;
+          rc_control[1] = y_forward_backward;
+          
+          droneConnection.sendCommand('rc ' 
+                                     + rc_control[0].toString() + ' ' 
+                                     + rc_control[1].toString() + ' ' 
+                                     + rc_control[2].toString() + ' ' 
+                                     + rc_control[3].toString());
+        },
+      ),
+    );
+  }
+}
+
+class JoystickRight extends StatelessWidget {
+  final List rc_control;
+  final ConnectTello droneConnection;
+
+  JoystickRight(this.rc_control, this.droneConnection);
+
+  static const double pi = 3.1415926535897932;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: JoystickView(
+        onDirectionChanged: (degrees, distance) {
+          //print('Grau JoystickRight: $degrees');
+          //print('Distancia JoystickRight: $distance');
+          double radian = degrees*(pi/180);
+          //print('Radianos: $radian');
+          var x_yaw = ((sin(radian)*distance)*100).toInt();
+          var y_up_down = ((cos(radian)*distance)*100).toInt();
+          rc_control[2] = y_up_down;
+          rc_control[3] = x_yaw;
+          
+          droneConnection.sendCommand('rc ' 
+                                     + rc_control[0].toString() + ' ' 
+                                     + rc_control[1].toString() + ' ' 
+                                     + rc_control[2].toString() + ' ' 
+                                     + rc_control[3].toString());
+        },
       ),
     );
   }
