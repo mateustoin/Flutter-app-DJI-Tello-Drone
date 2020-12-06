@@ -1,4 +1,7 @@
-# App Flutter para controle do Drone DJI Tello
+<figure class="image" align='center'>
+    <img src="img/header.png?raw=true">
+    <figcaption></figcaption>
+</figure>
 
 ## Índice
 + [Sobre](#sobre)
@@ -29,16 +32,16 @@ Para realizar o deploy da aplicação na sua máquina será necessária a instal
 Caso queira clonar este projeto direto do github na sua máquina, também será necessário o git instalado.
 
 <code>
-<a href="https://flutter.dev/docs/get-started/install"> Guia de instalação do Dart e Flutter na máquina</a>
+<a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"> Guia de instalação do Git na máquina</a>
 </code>
 <br/>
 
 ### Instalação
 
-Com o ambiente configurado, basta clonar este repositório 
+Com o ambiente configurado, basta clonar este repositório utilizando o comando no terminal:
 
 ```
-Dê um exemplo
+git clone https://github.com/mateustoin/Flutter-app-DJI-Tello-Drone
 ```
 
 Repita
