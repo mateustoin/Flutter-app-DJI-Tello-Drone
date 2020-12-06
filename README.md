@@ -1,5 +1,5 @@
 <figure class="image" align='center'>
-    <img src="img/header.png?raw=true">
+    <img src="img/header1.png?raw=true">
     <figcaption></figcaption>
 </figure>
 
@@ -11,7 +11,12 @@
 
 <h2 id="sobre">Sobre</h2>
 
-O objetivo desse projeto é de controlar o DJI Tello Drone, a fim de aprender sobre conceitos de comunicação utilizando o protocolo UDP, linguagem Dart e framework Flutter para desenvolvimento de projetos futuros.
+O objetivo desse projeto é controlar o drone DJI Tello, a fim de aprender sobre conceitos de comunicação utilizando o protocolo UDP, linguagem Dart e framework Flutter para desenvolvimento multiplataforma de apliativos mobile.
+
+<figure class="image" align='center'>
+    <img src="https://github.com/mateustoin/Tello-Data-Collector/blob/master/img/tello.png?raw=true">
+    <figcaption>Figura 1. DJI Tello Drone</figcaption>
+</figure>
 
 Realizado durante as lives da twitch no <a href="https://twitch.tv/bittoin">canal BitToin</a>, foi um projeto que utilizou como base um pacote em Dart feito também durante as lives para a comunicação da linguagem suportada em Dart/Flutter com o Drone. Atualmente o pacote está disponível de maneira oficial no site de pacotes do Dart (<a href="https://pub.dev/packages/tello">link do package</a>).
 
@@ -20,6 +25,8 @@ Realizado durante as lives da twitch no <a href="https://twitch.tv/bittoin">cana
 Siga estas instruções para criar, replicar e modificar o modelo de app na sua máquina. 
 
 ### Pré-requisitos
+
+O principal pré-requisito do projeto é ter o Drone para testá-lo com o app e modificar á vontade. Caso não tenha ainda é possível aprender bastante coisa relacionado a elementos inerentes ao framework e aplicativo.
 
 Para realizar o deploy da aplicação na sua máquina será necessária a instalação do Dart e Flutter. Entre no link a seguir e acompanhe as instruções de acordo com seu sistema operacional
 
@@ -44,35 +51,60 @@ Com o ambiente configurado, basta clonar este repositório utilizando o comando 
 git clone https://github.com/mateustoin/Flutter-app-DJI-Tello-Drone
 ```
 
-Repita
+Para instalar os pacotes necessários, entre na pasta pelo terminal. Com tanto que o ambiente esteja configurado de acordo com o guia anterior, digite:
 
 ```
-Até terminar
+flutter pub get
 ```
 
-## Uso <a name="uso"></a>
-Descreva como utilizar seu app ou sistema.
+Com os pacotes e dependências instalados corretamente, basta rodar o código:
 
+```
+flutter run
+```
 
-# App para controle do Drone DJI Tello
-
-<figure class="image" align='center'>
-    <img src="https://github.com/mateustoin/Tello-Data-Collector/blob/master/img/tello.png?raw=true">
-    <figcaption>Figura 1. DJI Tello Drone</figcaption>
-</figure>
-
-## Flutter app
-
-<p>
-
-</p>
+<h2 id="uso">Uso</h2>
 
 <figure class="image" align='center'>
     <img src="img/tela-app.png?raw=true">
     <figcaption>Figura 2. App para controle do Drone</figcaption>
 </figure>
 
-## Features futuras
+Com o drone em mãos, basta ligá-lo e aguardar o sinal WiFi ser gerado para conectar o aparelho de celular nele. Após a conexão, o aplicativo automaticamente passa a se comunicar com o Drone e todos os botões passam a funcionar.
 
-- [ ] Control drone speed with Slider Bar
-- [ ] Fill screen borders with Joystick limits
+### Joystick Esquerdo
+
+Controla a direção em que o drone se movimenta. Vai para frente, para trás, para esquerda e para direita. Além dos movimentos nas direções citadas, aumenta a velocidade de acordo com o quanto o joystick é puxado para o lado, indo de 0% até 100%.
+
+### Joystick Direito
+
+Segue a mesma lógica de funcionamento do anterior, porém controla se o drone vai para cima, para baixo, gira no próprio eixo no sentido horário e no sentido anti-horário. Além dos movimentos nas direções citadas, aumenta a velocidade de acordo com o quanto o joystick é puxado para o lado, indo de 0% até 100%.
+
+### Botão TakeOff
+
+Faz o Drone sair do repouso e começar a voar.
+
+### Botão Land
+
+Faz o Drone pousar.
+
+### Botão KeepAlive
+
+Envia o comando 'command' para o drone, a fim de manter conexão quando não estiver em uso.
+
+### Botão Increase Speed
+
+Aumenta a velocidade do Drone
+
+### Botão Decrease Speed
+
+Diminui a velocidade do Drone
+
+</p>
+
+## Features
+
+- [ ] Controlar a velocidade do Drone com uma Slide Bar
+- [ ] Deixar responsível para os joystick encaixarem em qualquer tela
+- [ ] Toda vez que aumentar ou diminuir a velocidade, aparecer pop up toast na tela
+- [ ] Comando de voz?
