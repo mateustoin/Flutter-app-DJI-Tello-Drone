@@ -72,33 +72,39 @@ flutter run
 
 Com o drone em mãos, basta ligá-lo e aguardar o sinal WiFi ser gerado para conectar o aparelho de celular nele. Após a conexão, o aplicativo automaticamente passa a se comunicar com o Drone e todos os botões passam a funcionar.
 
-### Joystick Esquerdo
+>### Joystick Esquerdo
+> Controla a direção em que o drone se movimenta. Vai para frente, para trás, para esquerda e para direita. Além dos movimentos nas direções citadas, aumenta a velocidade de acordo com o quanto o joystick é puxado para o lado, indo de 0% até 100%.
 
-Controla a direção em que o drone se movimenta. Vai para frente, para trás, para esquerda e para direita. Além dos movimentos nas direções citadas, aumenta a velocidade de acordo com o quanto o joystick é puxado para o lado, indo de 0% até 100%.
+<br/>
 
-### Joystick Direito
+> ### Joystick Direito
+> Segue a mesma lógica de funcionamento do anterior, porém controla se o drone vai para cima, para baixo, gira no próprio eixo no sentido horário e no sentido anti-horário. Além dos movimentos nas direções citadas, aumenta a velocidade de acordo com o quanto o joystick é puxado para o lado, indo de 0% até 100%.
 
-Segue a mesma lógica de funcionamento do anterior, porém controla se o drone vai para cima, para baixo, gira no próprio eixo no sentido horário e no sentido anti-horário. Além dos movimentos nas direções citadas, aumenta a velocidade de acordo com o quanto o joystick é puxado para o lado, indo de 0% até 100%.
+<br/>
 
-### Botão TakeOff
+>### Botão TakeOff
+>Faz o Drone sair do repouso e começar a voar.
 
-Faz o Drone sair do repouso e começar a voar.
+<br/>
 
-### Botão Land
+> ### Botão Land
+> Faz o Drone pousar.
 
-Faz o Drone pousar.
+<br/>
 
-### Botão KeepAlive
+> ### Botão KeepAlive
+> Envia o comando 'command' para o drone, a fim de manter conexão quando não estiver em uso.
 
-Envia o comando 'command' para o drone, a fim de manter conexão quando não estiver em uso.
+<br/>
 
-### Botão Increase Speed
+> ### Botão Increase Speed
+> Aumenta a velocidade do Drone
 
-Aumenta a velocidade do Drone
 
-### Botão Decrease Speed
+> <br/>
 
-Diminui a velocidade do Drone
+> ### Botão Decrease Speed
+> Diminui a velocidade do Drone
 
 </p>
 
