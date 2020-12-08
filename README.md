@@ -6,17 +6,18 @@
 ## Índice
 + [Sobre](#sobre)
 + [Primeiros Passos](#comecando)
+    - [Pré-requisitos](#pre_req)
+    - [Instalação](#instalacao)
 + [Uso](#uso)
-+ [Contribuiçōes](../CONTRIBUTING.md)
 
 <h2 id="sobre">Sobre</h2>
 
 O objetivo desse projeto é controlar o drone DJI Tello, a fim de aprender sobre conceitos de comunicação utilizando o protocolo UDP, linguagem Dart e framework Flutter para desenvolvimento multiplataforma de apliativos mobile.
 
-<figure class="image" align='center'>
+<div align='center'>
     <img src="https://github.com/mateustoin/Tello-Data-Collector/blob/master/img/tello.png?raw=true">
-    <figcaption>Figura 1. DJI Tello Drone</figcaption>
-</figure>
+    <p>Figura 1. DJI Tello Drone</p>
+</div>
 
 Realizado durante as lives da twitch no <a href="https://twitch.tv/bittoin">canal BitToin</a>, foi um projeto que utilizou como base um pacote em Dart feito também durante as lives para a comunicação da linguagem suportada em Dart/Flutter com o Drone. Atualmente o pacote está disponível de maneira oficial no site de pacotes do Dart (<a href="https://pub.dev/packages/tello">link do package</a>).
 
@@ -24,7 +25,7 @@ Realizado durante as lives da twitch no <a href="https://twitch.tv/bittoin">cana
 
 Siga estas instruções para criar, replicar e modificar o modelo de app na sua máquina. 
 
-### Pré-requisitos
+<h3 id='pre_req'>Pré-requisitos</h3>
 
 O principal pré-requisito do projeto é ter o Drone para testá-lo com o app e modificar á vontade. Caso não tenha ainda é possível aprender bastante coisa relacionado a elementos inerentes ao framework e aplicativo.
 
@@ -43,7 +44,7 @@ Caso queira clonar este projeto direto do github na sua máquina, também será 
 </code>
 <br/>
 
-### Instalação
+<h3 id='instalacao'>Instalação</h3>
 
 Com o ambiente configurado, basta clonar este repositório utilizando o comando no terminal:
 
@@ -65,10 +66,10 @@ flutter run
 
 <h2 id="uso">Uso</h2>
 
-<figure class="image" align='center'>
+<div align='center'>
     <img src="img/tela-app.png?raw=true">
-    <figcaption>Figura 2. App para controle do Drone</figcaption>
-</figure>
+    <p>Figura 2. App para controle do Drone</p>
+</div>
 
 Com o drone em mãos, basta ligá-lo e aguardar o sinal WiFi ser gerado para conectar o aparelho de celular nele. Após a conexão, o aplicativo automaticamente passa a se comunicar com o Drone e todos os botões passam a funcionar.
 
