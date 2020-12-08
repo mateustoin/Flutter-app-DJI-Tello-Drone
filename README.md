@@ -9,6 +9,7 @@
     - [Pré-requisitos](#pre_req)
     - [Instalação](#instalacao)
 + [Uso](#uso)
++ [Melhorias](#todo)
 
 <h2 id="sobre">Sobre</h2>
 
@@ -109,7 +110,7 @@ Com o drone em mãos, basta ligá-lo e aguardar o sinal WiFi ser gerado para con
 
 </p>
 
-## Features
+<h2 id='todo'>Features</h2>
 
 - [ ] Controlar a velocidade do Drone com uma Slide Bar
 - [ ] Deixar responsível para os joystick encaixarem em qualquer tela
